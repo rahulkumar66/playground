@@ -1,4 +1,6 @@
 !*.c
 !*.cpp
 !*.java
+*.o
+*
 !Makefile
