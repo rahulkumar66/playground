@@ -31,13 +31,6 @@ struct Node* insert(struct Node **top,int data)
 		newNod->next=*top;
 		*top=newNod;	
 	}
-	if(data==666)
-	{
-		struct Node *newNod=createNewNode(data);
-		newNod->next=*top;
-		*top=newNod;
-		newNod->next=*top;
-	}
 }
 
 void traverse(struct Node *top)

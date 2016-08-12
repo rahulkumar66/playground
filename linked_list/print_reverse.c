@@ -60,6 +60,41 @@ void traverse_reverse(struct Node *top)
 	}
 }
 
+void reverse_list(struct Node **top,int n)
+{
+		printf("\n\nhellox");
+	struct Node *first,*rest;
+	
+	first = *top;
+	rest = (*top)->next;
+	
+	if(rest==NULL)
+		return;
+	if(n==3) {
+	printf("\n\nhello");
+			reverse_list(&rest,1);
+	//	reverse_list(, 10);
+/*		first = *top;
+		rest = (*top)->next;
+		reverse_list(&rest,1);
+	first->next->next=first;
+	first->next=NULL;
+	
+	*top=rest;
+*/
+		return;	
+	}
+	reverse_list(&rest,++n);
+	first->next->next=first;
+	first->next=NULL;
+	
+	*top=rest;
+	if(n==10)
+	{
+		
+	}
+}
+
 int main()
 {
 	insert(&top,10);
@@ -70,7 +105,11 @@ int main()
 	insert(&top,666);
 	
 	traverse(top);	
-	traverse_reverse(top);
+	reverse_list(&top,1);
+	printf("\n\n");
+		traverse(top);	
+	
+	//traverse_reverse(top);
 	return 0;
 }
 
